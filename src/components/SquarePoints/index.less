@@ -1,0 +1,23 @@
+@legth:21px;
+@height:13px;
+@singLength:15px;
+
+
+
+.square{
+    width: @legth * @singLength;
+    height: @height * @singLength;
+    .point{
+        width: @singLength;
+        height: @singLength;
+        float: left;
+        &:before{
+            width: 50%;
+            height: 50%;
+            border-radius: 50%;
+            content:" ";
+            display: block;
+            background-color: rgba(148, 142, 139, 0.6);
+        }
+    }
+}

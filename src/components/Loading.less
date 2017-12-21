@@ -1,0 +1,50 @@
+
+@size: 1px;
+@radius: 14px;
+@shallow: 3px;
+@c-basic: #6de4a3;
+
+.loading {
+  position: relative;
+  width: @radius *2;
+  height: @radius *2;
+  border: 1px solid @c-basic;
+  border-radius: 50%;
+  animation: loading-rotating ease 1.5s infinite;
+}
+
+.loading:before {
+  position: absolute;
+  content: " ";
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  top: -1px;
+  left: 50%;
+  background-color: @c-basic;
+  box-shadow: 0 0 0 2px @c-basic;
+}
+
+
+
+@keyframes loading-bubbles {
+  0% {
+
+    box-shadow: 0 0 0 3px @c-basic;
+  }
+  90% {
+    box-shadow: 0 0 0 0 @c-basic;
+  }
+  100% {
+    box-shadow: 0 0 0 3px @c-basic;
+  }
+}
+
+@keyframes loading-rotating {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
