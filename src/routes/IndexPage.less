@@ -119,3 +119,52 @@
     bottom: 30px* @radio;
   }
 }
+
+:global(.sunset){  
+  z-index: 100;
+  right: -10px;
+  bottom: -175px;
+  width: 700px * @radio;
+  height: 600px * @radio;
+  .orange {   
+    top: 300px;
+    left: 100px * @radio;;
+    width: 600px * @radio;
+    height: 600px * @radio; 
+  }
+  .blue { 
+    left: 0; 
+    top: 150px * @radio; 
+    width: 500px * @radio;
+    height: 500px * @radio;
+  }
+  .squareList { 
+    transform:scale(0.8, 0.8);
+    left: 200px * @radio;
+    bottom: 30px* @radio;
+  }
+}
+
+:global(.partialeclipse){ 
+  z-index: 100;
+  right: 100px;
+  bottom: 0px;
+  width: 700px * @radio;
+  height: 500px * @radio;
+  .orange {   
+    top: 40px;
+    left: 120px * @radio;
+    width: 400px * @radio;
+    height: 400px * @radio; 
+  }
+  .blue { 
+    left: 420px * @radio; 
+    top: 180px * @radio; 
+    width: 200px * @radio;
+    height: 200px * @radio;
+  }
+  .squareList {  
+    left: 0;
+    bottom: 20px* @radio;
+  }
+}

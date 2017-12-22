@@ -1,6 +1,6 @@
 import {queryTopic,queryArticles}   from '../services/api'; 
 
-const bgMap=['normal','mask','eclipse'];
+const bgMap=['normal','mask','eclipse','sunset','partialeclipse'];
 let firstLoad=false;
 
 
@@ -12,7 +12,7 @@ export default {
     articleloading:false,
     topicList:[],
     articleList:[],
-    theme:'eclipse'
+    theme:'partialeclipse'
   },
 
   effects: {
