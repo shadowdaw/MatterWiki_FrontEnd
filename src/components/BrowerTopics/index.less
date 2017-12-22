@@ -24,7 +24,7 @@
     left: -30px;
     top: 50%;
     z-index: 9;
-    transition: transform 300ms;
+    transition: transform 500ms;
     transform: translateY(-50%);
     content: " ";
     display: block;
@@ -44,12 +44,13 @@
     overflow-x: hidden;
     overflow-y: visible;
     .tail {
+      @tailheight:2px;
       position: absolute;
       right: 0;
       bottom: 0;
       display: block;
       width: 100%;
-      height: 2px;
+      height: @tailheight;
       background-color: #d5cdcf;
       &:before {
         position: absolute;
@@ -58,7 +59,7 @@
         content: " ";
         display: block;
         width: 50px;
-        height: 2px;
+        height: @tailheight;
         background-color: #7b9fb6;
         transition: width 500ms;
       }

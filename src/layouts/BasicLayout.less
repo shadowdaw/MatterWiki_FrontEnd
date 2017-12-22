@@ -1,6 +1,5 @@
 .container {
-  background: #f0f2f5;
-  // background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
+  background: #f0f2f5; // background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
   width: 100%;
   min-height: 100%;
   background-repeat: no-repeat;
@@ -9,7 +8,106 @@
   padding: 110px 0 144px 0;
   position: relative;
 }
-.mainbody{
+
+@navbarheight:80px;
+.navbar {
+  height: @navbarheight;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color:  #f0f2f5;
+  z-index: 99;
+  transition: transform .3s;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+    -o-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+}
+:global(.scroll).navbar { 
+    transform: translateY(-100%);
+}
+
+
+
+.navbar a {
+  color: #000;
+  background-color: transparent;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: color .3s;
+  transition: color .3s;
+  -webkit-text-decoration-skip: objects;
+  &:focus {
+    text-decoration: none;
+    -webkit-text-decoration-skip: ink;
+    text-decoration-skip: ink;
+  }
+  &:hover {
+    color: #7b9fb6;
+  }
+  &:active {
+    color: #096dd9;
+  }
+  &:active,
+  &:hover {
+    outline: 0;
+    text-decoration: none;
+  }
+  &[disabled] {
+    color: rgba(0, 0, 0, 0.25);
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.navbarBody {
+  height: @navbarheight;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbarHeader {
+  height: @navbarheight;
+  float: left;
+  display: flex;
+  align-items: center;
+  & a {
+    color: #777;
+    height: 60px;
+    font-size: 18px;
+    line-height: 60px;
+  }
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  margin: 0 10px;
+}
+
+.navbarbtns {
+  float: right !important;
+  margin-right: -15px;
+  height: @navbarheight; 
+  display: flex;
+  align-items: center;
+}
+.navbarbtns li {
+    float: left;
+}
+.navbarbtns li a{
+    color: #777;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid transparent;
+}
+
+.mainbody {
   position: relative;
   min-height: 800px;
 }

@@ -18,3 +18,8 @@ export function queryArticles(params) {
     return request('/api/topic/' + params.topicId + '/articles', {});
   }
 }
+
+export function queryArticleDetail(params) { 
+    return request(`/api/articles/${params.id}`, {}); 
+}
+
