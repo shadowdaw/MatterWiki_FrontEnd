@@ -21,18 +21,24 @@ export default class IndexPage extends Component {
             const {index} = this.props;
             const {theme} = index;
             const className=`background ${theme}`;
-            return <div className={styles.mainarea}>
-                    <div className={styles.topicList}>
-                      <Topics/>
+            return  <div>
+                      <div className={styles.mainarea}>
+                        <div className={styles.topicList}>
+                          <Topics/>
+                        </div>
+                        <div className={styles.articleList}>
+                          <div className={styles.articlemask}> 
+                              <div className={styles.articlewrapper}>
+                                <Articles/>
+                              </div> 
+                          </div>
+                        </div>
+                      </div>
+                      <div className={className}>
+                          <div className={styles.orange}></div>
+                          <div className={styles.blue}></div>
+                          <Square className={styles.squareList}/>
+                      </div>
                     </div>
-                    <div className={styles.articleList}>
-                      <Articles/>
-                    </div>
-                    <div className={className}>
-                      <div className={styles.orange}></div>
-                      <div className={styles.blue}></div>
-                      <Square className={styles.squareList}/>
-                    </div>
-                  </div>
         }
     }
