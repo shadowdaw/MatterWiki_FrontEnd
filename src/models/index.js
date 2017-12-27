@@ -12,7 +12,7 @@ export default {
     articleloading:false,
     topicList:[],
     articleList:[],
-    theme:'partialeclipse'
+    theme:'normal'
   },
 
   effects: {

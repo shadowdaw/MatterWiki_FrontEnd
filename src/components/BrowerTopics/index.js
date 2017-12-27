@@ -26,6 +26,12 @@ export default class Topics extends Component {
       const {index} = this.props; 
       const {topicList,topicloading}=index
         return (topicloading?<Loading/>:<div > 
+          <div href="#" className={styles.topicItem} onClick={(e) => this.topicSelect(null,e)}>
+                <div className={styles.topicItemTitle}>
+                  <span>全部</span>
+                  <div className={styles.tail}></div>
+                </div>
+            </div>
           {topicList.map(topic => (
               <div key={topic.id} href="#" className={styles.topicItem} onClick={(e) => this.topicSelect(topic.id,e)}>
                 <div className={styles.topicItemTitle}>
