@@ -25,8 +25,8 @@ export default class Article extends Component {
                     return <Loading/>;
                 }else if (detail && detail.topic && detail.user){
                     return (<div  className={styles.mainarea}> 
-                              <div className="article-heading">
-                                  <h1 className="single-article-title">{detail.title}
+                              <div >
+                                  <h1 className={styles.title}>{detail.title}
                                   <div className="pull-right"> 
                                     {(this.state.isguest) ? '' : <Link to={'/article/edit/' + detail.id}><i className="fa fa-pencil-square-o" aria-hidden="true"></i></Link>}
                                     <Link to={'/article/history/' + detail.id}><i className="fa fa-history" aria-hidden="true"></i></Link>
@@ -34,9 +34,9 @@ export default class Article extends Component {
                                             : ''}
                                   </div>
                                   </h1>
-                                  <div className="single-article-meta">
-                                    分类:<span className="single-article-topic">{detail.topic.name}</span>
-                                    <span>最后更新:  {detail.updated_at} By:  {detail.user.name} ({detail.user.about})</span>
+                                  <div className={styles.articleMeta}>
+                                    分类 : <span className={styles.articleTopic}>{detail.topic.name}</span>
+                                    <span className={styles.articleUpdateTime}>最后更新:  {detail.updated_at} By:  {detail.user.name} ({detail.user.about})</span>
                                 </div>
                               </div>
                               <div className="markdown-body"
