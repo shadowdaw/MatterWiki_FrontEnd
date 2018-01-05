@@ -13,7 +13,7 @@ const {Content} = Layout;
 
 class BasicLayout extends React.PureComponent {
     state = {
-        loading: true,
+        loading: false,
         scrolling:false
     }
     handleLogout() {
@@ -58,7 +58,7 @@ class BasicLayout extends React.PureComponent {
                 {loading?'':(window.localStorage.getItem('userToken')) ?
             <div className={styles.navbarbtns}>
                           <ul className="nav navbar-nav navbar-right">
-                            {(window.localStorage.getItem('userId') == 1) ?
+                            {(window.localStorage.getItem('userId') == -1) ?
                 <li><Link to="admin" className="">管理员</Link></li> : ''
             }
                     <li><Link to="article/new" className="">新条目</Link></li>

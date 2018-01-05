@@ -1,4 +1,5 @@
-import {queryArticleDetail}   from '../services/api'; 
+import {queryArticleDetail,updateArticle,saveArticle}   from '../services/api'; 
+import { routerRedux } from 'dva/router';
 
 export default {
 
@@ -16,11 +17,39 @@ export default {
         type: 'changeLoading',
         payload: true,
       }); 
-      const response = yield call(queryArticleDetail, payload);
+      const response = yield call(queryArticleDetail, payload); 
       yield put({
         type: 'refreshState',
         payload: {detail:response.data},
       }); 
+      yield put({
+        type: 'changeLoading',
+        payload: false,
+      }); 
+    },
+    *saveArticle({ payload }, { call, put }) {  // eslint-disable-line 
+      yield put({
+        type: 'changeLoading',
+        payload: true,
+      }); 
+      const response = yield call(saveArticle, payload);
+      if(!response.error.error){
+        yield put(routerRedux.push(`/article/${response.data.id}`));
+      }
+      yield put({
+        type: 'changeLoading',
+        payload: false,
+      }); 
+    },
+    *updateArticle({ payload }, { call, put }) {  // eslint-disable-line 
+      yield put({
+        type: 'changeLoading',
+        payload: true,
+      }); 
+      const response = yield call(updateArticle, payload);
+      if(!response.error.error){
+        yield put(routerRedux.push(`/article/${response.data.id}`));
+      }
       yield put({
         type: 'changeLoading',
         payload: false,

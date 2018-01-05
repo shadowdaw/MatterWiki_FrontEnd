@@ -26,12 +26,8 @@ export default class IndexPage extends Component {
                         <div className={styles.topicList}>
                           <Topics/>
                         </div>
-                        <div className={styles.articleList}>
-                          <div className={styles.articlemask}> 
-                              <div className={styles.articlewrapper}>
-                                <Articles/>
-                              </div> 
-                          </div>
+                        <div className={styles.articleList}> 
+                                <Articles/> 
                         </div>
                       </div>
                       <div className={className}>

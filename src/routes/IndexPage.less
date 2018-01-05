@@ -41,7 +41,7 @@
 @radio:0.8;
 
 :global(.background){
-  position: absolute; 
+  position: fixed; 
   overflow: hidden;
   transition:all 1s;
   .orange {
@@ -66,12 +66,12 @@
 
 :global(.normal){ 
   z-index: 100;
-  right: 0px;
-  bottom: 0px;
+  right: 0;
+  bottom: 0;
   width: 800px * @radio;
   height: 600px * @radio;
   .orange {  
-    top: 0px;
+    top: 0;
     left: 200px * @radio;
     width: 600px * @radio;
     height: 600px * @radio; 
@@ -114,7 +114,7 @@
 
 :global(.eclipse){ 
   z-index: 100;
-  right: 100px;
+  right: 10px;
   bottom: 0px;
   width: 800px * @radio;
   height: 600px * @radio;
@@ -141,7 +141,7 @@
 :global(.sunset){  
   z-index: 100;
   right: -10px;
-  bottom: -175px;
+  bottom: 5px;
   width: 700px * @radio;
   height: 600px * @radio;
   .orange {   

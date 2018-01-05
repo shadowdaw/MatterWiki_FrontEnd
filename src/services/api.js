@@ -19,6 +19,13 @@ export function queryArticles(params) {
   }
 }
 
+export function updateArticle(params) { 
+    return request('/api/articles/', {method:'PUT',body:params});
+}
+export function saveArticle(params) { 
+    return request('/api/articles/', {method:'POST',body:params});
+}
+ 
 export function queryArticleDetail(params) { 
     return request(`/api/articles/${params.id}`, {}); 
 }

@@ -24,10 +24,22 @@ export const getNavData = app => [
         name: '登录', 
         path: 'login',
         component: dynamicWrapper(app, ['login'], () => import('../routes/Login')),
-      } , {
+      },{
         name: '详情页',
         path: 'article',
         children: [{
+          name: '新文章',
+          path: '/new',
+          component: dynamicWrapper(app, ['article','index'], () => import('../routes/Article/newarticle.js')),
+        },{
+        name: '编辑文章',
+        path: '/edit',
+        children: [{
+            name: '编辑文章页',
+            path: '/:id',
+            component: dynamicWrapper(app, ['article','index'], () => import('../routes/Article/edit.js')),
+          }]
+        },{
           name: '详情页',
           path: '/:id',
           component: dynamicWrapper(app, ['article'], () => import('../routes/Article/article.js')),
