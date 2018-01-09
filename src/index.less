@@ -13,7 +13,7 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
-} 
+}
 
 
 @font-face {
@@ -225,9 +225,19 @@ body,
   .markdown-body * {
     box-sizing: border-box;
   }
- .markdown-body figure{
+  .markdown-body figure {
     margin: 1em 0;
- }
+    text-align: center;
+    border: solid 1px #ccc;
+    border-radius: 2px;
+    background: rgba(0,0,0,0.05); 
+    padding-bottom: 0; 
+  }
+  .markdown-body figure figcaption {
+    padding: 1em .5em;
+    font-size: 13px; 
+    text-align: center;
+  }
   .markdown-body input {
     font-family: inherit;
     font-size: inherit;
@@ -608,7 +618,7 @@ body,
   }
   .markdown-body .attachment .caption {
     margin: 12px auto;
-    color: #888; 
+    color: #888;
     text-align: center;
   }
 
@@ -619,8 +629,6 @@ body,
     background-color: #fff;
     display: block;
     margin: 0 auto;
-    border: 4px solid #ffc2a1;
-    border-radius: 20px;
   }
 
   .markdown-body code {
