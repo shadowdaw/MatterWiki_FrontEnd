@@ -3394,6 +3394,10 @@ a.ant-notification-notice-close:focus {
       -ms-transform: translateY(-100%);
           transform: translateY(-100%);
 }
+.navbar___RBnRf ul,
+.navbar___RBnRf ol {
+  list-style: none;
+}
 .navbar___RBnRf a {
   color: #000;
   background-color: transparent;
@@ -11168,10 +11172,6 @@ body,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-ul,
-ol {
-  list-style: none;
 }
 @font-face {
   font-family: octicons-link;
