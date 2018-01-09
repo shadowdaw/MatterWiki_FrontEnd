@@ -1,5 +1,6 @@
 import {queryArticleDetail,updateArticle,saveArticle}   from '../services/api'; 
 import { routerRedux } from 'dva/router';
+import { message } from 'antd';
 
 export default {
 
@@ -34,6 +35,7 @@ export default {
       }); 
       const response = yield call(saveArticle, payload);
       if(!response.error.error){
+        message.success('新建Wiki成功!')
         yield put(routerRedux.push(`/article/${response.data.id}`));
       }
       yield put({
@@ -48,7 +50,8 @@ export default {
       }); 
       const response = yield call(updateArticle, payload);
       if(!response.error.error){
-        yield put(routerRedux.push(`/article/${response.data.id}`));
+        message.success('保存修改成功!')
+        yield put(routerRedux.push(`/article/${response.data.article_id}`));
       }
       yield put({
         type: 'changeLoading',

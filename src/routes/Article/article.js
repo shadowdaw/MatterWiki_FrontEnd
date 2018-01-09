@@ -42,6 +42,13 @@ export default class Article extends Component {
                               <div className="markdown-body"
                                   dangerouslySetInnerHTML={{__html: detail.body}}>
                               </div>
+                              <p className={styles.end}>END</p>
+                              <div className={styles.footer}>
+                                <span>如需回答请附上联系方式</span>
+                                <div className={styles.imgarea}>
+                                  <img src="http://owyx09dkb.bkt.clouddn.com/image/pay2comment.jpg" className={styles.footerimg}/>
+                                </div>
+                              </div>
                             </div> 
                     );
                 }else{

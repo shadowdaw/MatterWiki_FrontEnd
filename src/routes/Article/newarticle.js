@@ -128,7 +128,7 @@ export default class Article extends Component {
                                 )}
                               </FormItem> 
                               <FormItem className={styles.additional}> 
-                                  <Button size="large" className={styles.submit} type="primary" htmlType="submit">
+                                  <Button size="large"  loading={loading} className={styles.submit} type="primary" htmlType="submit">
                                     创建
                                   </Button>
                               </FormItem>

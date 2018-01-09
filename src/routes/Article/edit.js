@@ -74,14 +74,15 @@ export default class Article extends Component {
               this.setState({content:e.editor.getData()})
             }); 
         }
-        handleSubmit = (e) => {
+        handleSubmit = (e) => { 
+            const {detail}=this.props.article; 
             e.preventDefault();
             this.props.form.validateFields({
                 force: true
             },
                 (err, values) => { 
                     if (!err) { 
-                        const payload={...values,body:this.state.content};
+                        const payload={...values,body:this.state.content|| detail.body};
                         this.props.dispatch({
                             type: 'article/updateArticle',
                             payload: payload,
@@ -154,8 +155,8 @@ export default class Article extends Component {
                                 )}
                               </FormItem>
                               <FormItem className={styles.additional}> 
-                                  <Button size="large" className={styles.submit} type="primary" htmlType="submit">
-                                    创建
+                                  <Button size="large" loading={loading} className={styles.submit} type="primary" htmlType="submit">
+                                    保存修改
                                   </Button>
                               </FormItem>
                           </Form>
